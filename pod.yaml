@@ -34,11 +34,3 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 80
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> a26ce78 (Second commit)
->>>>>>> 01d73e6 (Second commit)
