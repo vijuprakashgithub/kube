@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: loadbalancer-svc
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+spec:
+  type: LoadBalancer
+  selector:
+    app: hello
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loadbalancer-pod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello 
+    spec:
+      containers:
+        - name: hello
+          image: vijuprakash/kube:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> a26ce78 (Second commit)
+>>>>>>> 01d73e6 (Second commit)
